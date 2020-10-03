@@ -21,6 +21,13 @@ breaklines=true
 If you install LaTeX for your Operating System and install a tool like Jabref, you can create a repository that you can reference and cite automatically from.
 If you use \cite{Sanjay2013} and in Jabref, if you have an entry with that key, it automatically inserts the reference. \\ \\
 
+\section{Keys}
+
+The Key when you create a BibTeX entry is normally nameYear format, so griffin2020, walsh2018, hynes2020 etc. This mirrors somewhat the referencing style which is helpful.
+However you can create manual BibTeX entries and simply create a key that makes sense for you.
+
+\section{An Issue you might hit}
+
 One possible problem is if the reference contains the \&. You will get an error in LaTeX when you try and compile it. The error will look like this:
 
 \begin{lstlisting}
@@ -32,7 +39,7 @@ The Play button that you click to run and compile the document will stay as a re
 You need to open the BibTeX file, right click, open in notepad,
 Find the offending \& and put a backslash in front of it. Save the file and recompile and it should work!
 
-\section{Structure of a normal BibTeX entry}
+\subsection{Structure of a normal BibTeX entry}
 
 \begin{lstlisting}
 @Article{Sanjay2013,
@@ -53,7 +60,7 @@ Find the offending \& and put a backslash in front of it. Save the file and reco
 
 \end{lstlisting}
 
-\section{Structure of a BibTeX entry that has an \& in it}
+\subsection{Structure of a BibTeX entry that has an \& in it}
 
 Normally the troublesome \& is in the Title or Publisher section, see an example below and the symbol to escape it with the backslash
 
