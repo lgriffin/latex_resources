@@ -1,5 +1,11 @@
 \documentclass[12pt]{article}
 \usepackage{natbib}
+\usepackage{listings}
+\lstset{
+basicstyle=\small\ttfamily,
+columns=flexible,
+breaklines=true
+}
 
 \begin{document}
 
@@ -17,8 +23,26 @@ One possible problem is if the reference contains the \&. You will get an error 
 You need to open the BibTeX file, right click, open in notepad,
 Find the offending \& and put a backslash in front of it. Save the file and recompile and it should work!
 
+\section{Structure of a BibTeX entry}
 
+\begin{lstlisting}
+@Article{Sanjay2013,
+  author    = {Sanjay, Bhasin},
+  journal   = {Journal of Manufacturing Technology Management},
+  title     = {Analysis of whether Lean is viewed as an ideology by British organizations},
+  year      = {2013},
+  issn      = {1741-038X},
+  month     = jan,
+  number    = {4},
+  pages     = {536--554},
+  volume    = {24},
+  abstract  = {The full abstract normally appears here, but I am snipping it for ease of reading},
+  doi       = {10.1108/17410381311327396},
+  publisher = {Emerald Group Publishing Limited},
+  url       = {https://doi.org/10.1108/17410381311327396},
+}
 
+\end{lstlisting}
 
 
 
