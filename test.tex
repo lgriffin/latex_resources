@@ -1,6 +1,7 @@
 \documentclass[12pt]{article}
 \usepackage{natbib}
 \usepackage{listings}
+
 \lstset{
 basicstyle=\small\ttfamily,
 columns=flexible,
@@ -15,15 +16,23 @@ breaklines=true
 
 \maketitle
 
+
 \section{Introduction}
 If you install LaTeX for your Operating System and install a tool like Jabref, you can create a repository that you can reference and cite automatically from.
-If you use \cite{Sanjay2013} and in Jabref, if you have an entry with that key, it automatically inserts the reference.
+If you use \cite{Sanjay2013} and in Jabref, if you have an entry with that key, it automatically inserts the reference. \\ \\
 
-One possible problem is if the reference contains the \&. You will get an error in LaTeX when you try and compile it.
+One possible problem is if the reference contains the \&. You will get an error in LaTeX when you try and compile it. The error will look like this:
+
+\begin{lstlisting}
+Misplaced alignment tab character &.
+\end{lstlisting}
+
+The Play button that you click to run and compile the document will stay as a red X.
+
 You need to open the BibTeX file, right click, open in notepad,
 Find the offending \& and put a backslash in front of it. Save the file and recompile and it should work!
 
-\section{Structure of a BibTeX entry}
+\section{Structure of a normal BibTeX entry}
 
 \begin{lstlisting}
 @Article{Sanjay2013,
@@ -40,6 +49,20 @@ Find the offending \& and put a backslash in front of it. Save the file and reco
   doi       = {10.1108/17410381311327396},
   publisher = {Emerald Group Publishing Limited},
   url       = {https://doi.org/10.1108/17410381311327396},
+}
+
+\end{lstlisting}
+
+\section{Structure of a BibTeX entry that has an \& in it}
+
+Normally the troublesome \& is in the Title or Publisher section, see an example below and the symbol to escape it with the backslash
+
+\begin{lstlisting}
+@Book{edmonson2018,
+  author    = {Amy C. Edmondson},
+  publisher = {John Wiley \& Sons},
+  title     = {The Fearless Organization: Creating Psychological Safety in the Workplace for Learning, Innovation, and Growth},
+  year      = {2018},
 }
 
 \end{lstlisting}
